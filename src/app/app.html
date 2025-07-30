@@ -1,22 +1,9 @@
-<div class="container">
-  <h1>{{ title }}</h1>
-
-  <div *ngIf="objects.length > 0; else noData">
-    <div class="card" *ngFor="let obj of objects">
-      <h2>{{ obj.name || 'Nome não disponível' }}</h2>
-      <div *ngIf="obj.data">
-        <p><strong>Cor:</strong> {{ obj.data.color || 'Não informado' }}</p>
-        <p><strong>Capacidade:</strong> {{ obj.data.capacity || 'Não informada' }}</p>
-        <p><strong>Preço:</strong> {{ obj.data.price || 'Não informado' }}</p>
-        <p><strong>Geração:</strong> {{ obj.data.generation || 'Não informada' }}</p>
-      </div>
-      <div *ngIf="!obj.data">
-        <p>Dados adicionais não disponíveis.</p>
-      </div>
-    </div>
-  </div>
-
-  <ng-template #noData>
-    <p>Carregando dados ou nenhum dado encontrado.</p>
-  </ng-template>
-</div>
+<header>
+  <h1>Gestor de Objetos</h1>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <p>Projeto Angular CRUD - {{ year }}</p>
+</footer>

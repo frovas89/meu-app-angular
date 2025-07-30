@@ -1,37 +1,14 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// src/app/app.component.ts
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Api } from './services/api';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    CommonModule
-  ],
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App implements OnInit{
-   title = 'Consumindo API com Angular (Standalone)';
-  public objects: any[] = [];
-
-  // A lógica do construtor e do ngOnInit é a mesma
-  constructor(private apiService: Api) {}
-
-  ngOnInit(): void {
-    this.carregarObjetos();
-  }
-
-  public carregarObjetos(): void {
-    this.apiService.getObjects().subscribe(
-      (data: any[]) => {
-        this.objects = data;
-        console.log(this.objects);
-      },
-      (error) => {
-        console.error('Erro ao buscar objetos:', error);
-      }
-    );
-  }
+export class App {
+  year = new Date().getFullYear();
 }

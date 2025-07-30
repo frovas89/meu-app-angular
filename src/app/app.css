@@ -18,3 +18,22 @@ h1 {
 h2 {
   color: #0056b3;
 }
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+main {
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: #6c757d;
+  border-top: 1px solid #dee2e6;
+}
